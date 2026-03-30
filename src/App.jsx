@@ -1,6 +1,7 @@
 import './App.css'
 import Banner from './Components/Banner'
 import Cards from './Components/Cards'
+import Explore from './Components/Explore'
 import Navbar from './Components/Navbar'
 import Price from './Components/Price'
 import Started from './Components/Started'
@@ -28,6 +29,7 @@ const [products, setProducts] = useState([]);
     </div>
     <Started/>
    <Price/>
+   <Explore/>
     </>
   )
 }
