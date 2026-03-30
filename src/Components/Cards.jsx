@@ -1,28 +1,27 @@
 import { useState } from 'react';
+import { Check, ShoppingCart, Package, Loader2 } from 'lucide-react';
 
 const tagStyles = {
   bestseller: 'bg-yellow-100 text-yellow-800',
   popular: 'bg-purple-100 text-purple-700',
-  new: 'bg-green-100  text-green-700',
+  new: 'bg-green-100 text-green-700',
 };
 
 const periodLabel = (period) =>
   period === 'one-time' ? 'One-Time' : 'Mo';
 
-const CheckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-violet-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-  </svg>
-);
-
-// Destructure 'products' from props
 const Cards = ({ products = [] }) => {
   const [cartCount, setCartCount] = useState(0);
   const [activeTab, setActiveTab] = useState('products');
 
   // Handle empty state while loading
   if (!products.length) {
-    return <div className="text-center py-20 text-gray-500 font-bold">Loading Premium Tools...</div>;
+    return (
+      <div className="flex flex-col items-center justify-center py-20 text-gray-500 font-bold gap-3">
+        <Loader2 className="w-8 h-8 animate-spin text-violet-500" />
+        <p>Loading Premium Tools...</p>
+      </div>
+    );
   }
 
   return (
@@ -40,20 +39,22 @@ const Cards = ({ products = [] }) => {
         <div className="flex justify-center gap-3 mt-7">
           <button
             onClick={() => setActiveTab('products')}
-            className={`px-7 py-2.5 rounded-full font-bold text-sm transition-all active:scale-95 cursor-pointer
+            className={`flex items-center gap-2 px-7 py-2.5 rounded-full font-bold text-sm transition-all active:scale-95 cursor-pointer
               ${activeTab === 'products'
                 ? 'bg-violet-600 text-white shadow-lg shadow-violet-200'
                 : 'bg-white border border-gray-200 text-gray-700 hover:border-violet-300'}`}
           >
+            <Package size={18} />
             Products
           </button>
           <button
             onClick={() => setActiveTab('cart')}
-            className={`px-7 py-2.5 rounded-full font-bold text-sm transition-all active:scale-95 cursor-pointer
+            className={`flex items-center gap-2 px-7 py-2.5 rounded-full font-bold text-sm transition-all active:scale-95 cursor-pointer
               ${activeTab === 'cart'
                 ? 'bg-violet-600 text-white shadow-lg shadow-violet-200'
                 : 'bg-white border border-gray-200 text-gray-700 hover:border-violet-300'}`}
           >
+            <ShoppingCart size={18} />
             Cart ({cartCount})
           </button>
         </div>
@@ -74,8 +75,10 @@ const Cards = ({ products = [] }) => {
                 </span>
               </div>
 
-              {/* Icon */}
-              <div className="text-4xl mb-3">{product.icon}</div>
+              {/* Icons */}
+              <div className="text-4xl mb-3 text-violet-600">
+                {product.icon}
+              </div>
 
               {/* Name */}
               <h2 className="card-title text-xl font-extrabold text-gray-900 mb-2">
@@ -97,7 +100,7 @@ const Cards = ({ products = [] }) => {
               <ul className="flex flex-col gap-2 mb-6 grow">
                 {product.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                    <CheckIcon />
+                    <Check className="w-4 h-4 text-violet-500 shrink-0" strokeWidth={3} />
                     {feature}
                   </li>
                 ))}
@@ -105,9 +108,10 @@ const Cards = ({ products = [] }) => {
 
               {/* Buy Button */}
               <button
-                className="btn rounded-full bg-violet-600 hover:bg-violet-700 border-none text-white font-bold w-full active:scale-95 transition-all cursor-pointer"
+                className="btn rounded-full bg-violet-600 hover:bg-violet-700 border-none text-white font-bold w-full active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2"
                 onClick={() => setCartCount(c => c + 1)}
               >
+                <ShoppingCart size={18} />
                 Buy Now
               </button>
             </div>
