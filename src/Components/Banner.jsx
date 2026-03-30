@@ -45,8 +45,7 @@ const Banner = () => {
                         className="w-full h-auto object-cover"
                     />
                 </div>
-            </div>
-
+            </div>  
         </section>
     );
 };
