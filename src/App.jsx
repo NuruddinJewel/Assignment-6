@@ -2,6 +2,7 @@ import './App.css'
 import Banner from './Components/Banner'
 import Cards from './Components/Cards'
 import Navbar from './Components/Navbar'
+import Started from './Components/Started'
 import User from './Components/User'
 import { useEffect, useState } from 'react';
 
@@ -23,6 +24,7 @@ const [products, setProducts] = useState([]);
     <div className="App">
       <Cards products={products} />
     </div>
+    <Started/>
     </>
   )
 }
