@@ -29,6 +29,20 @@ const Cards = ({ products = [], cartItems = [], addToCart, removeFromCart, clear
     setActiveTab('cart');
   };
 
+  const handleRemoveFromCart = (item) => {
+    removeFromCart(item.id);
+    toast.warn(`🗑️ ${item.name} removed from cart.`, {
+      style: {
+        borderRadius: '12px',
+        fontWeight: '600',
+        fontSize: '14px',
+        background: '#fffbeb',
+        color: '#92400e',
+        border: '1px solid #fde68a',
+      },
+    });
+  };
+
   const handleCheckout = () => {
     clearCart();
     setActiveTab('products');
@@ -101,33 +115,22 @@ const Cards = ({ products = [], cartItems = [], addToCart, removeFromCart, clear
                 className="card bg-base-100 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200 rounded-2xl overflow-hidden"
               >
                 <div className="card-body gap-0 p-6">
-                  {/* Badge */}
                   <div className="flex justify-end mb-2">
                     <span className={`text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full ${tagStyles[product.tagType] || 'bg-gray-100 text-gray-600'}`}>
                       {product.tag}
                     </span>
                   </div>
-
-                  {/* Icon */}
                   <div className="text-4xl mb-3 text-violet-600">{product.icon}</div>
-
-                  {/* Name */}
                   <h2 className="card-title text-xl font-extrabold text-gray-900 mb-2">
                     {product.name}
                   </h2>
-
-                  {/* Description */}
                   <p className="text-sm text-gray-500 leading-relaxed mb-4 h-12">
                     {product.description}
                   </p>
-
-                  {/* Price */}
                   <div className="mb-4">
                     <span className="text-3xl font-extrabold text-gray-900">${product.price}</span>
                     <span className="text-sm text-gray-400 ml-1">/{periodLabel(product.period)}</span>
                   </div>
-
-                  {/* Features */}
                   <ul className="flex flex-col gap-2 mb-6 grow">
                     {product.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
@@ -136,8 +139,6 @@ const Cards = ({ products = [], cartItems = [], addToCart, removeFromCart, clear
                       </li>
                     ))}
                   </ul>
-
-                  {/* Buy Button */}
                   <button
                     className="btn rounded-full bg-violet-600 hover:bg-violet-700 border-none text-white font-bold w-full active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2"
                     onClick={() => handleAddToCart(product)}
@@ -177,7 +178,7 @@ const Cards = ({ products = [], cartItems = [], addToCart, removeFromCart, clear
                     </div>
                     <p className="font-bold text-gray-900 mr-4">${item.price * item.qty}</p>
                     <button
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => handleRemoveFromCart(item)}
                       className="text-rose-500 hover:text-rose-700 font-semibold text-sm active:scale-95 transition-all cursor-pointer flex items-center gap-1"
                     >
                       <Trash2 size={15} />
@@ -187,13 +188,11 @@ const Cards = ({ products = [], cartItems = [], addToCart, removeFromCart, clear
                 ))}
               </div>
 
-              {/* Total */}
               <div className="flex items-center justify-between border-t border-gray-100 pt-5 mb-6">
                 <span className="text-gray-500 font-medium">Total:</span>
                 <span className="text-3xl font-extrabold text-gray-900">${cartTotal}</span>
               </div>
 
-              {/* Checkout */}
               <button
                 onClick={handleCheckout}
                 className="w-full py-4 rounded-xl bg-linear-to-r from-violet-600 to-purple-700 text-white font-bold text-base hover:opacity-95 active:scale-95 transition-all cursor-pointer"
