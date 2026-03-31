@@ -1,16 +1,102 @@
-# React + Vite
+# Supercharge Your Digital Workflow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+<!-- Banner -->
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=7C3AED&height=200&section=header&text=DigiTools&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Supercharge%20Your%20Digital%20Workflow&descAlignY=60&descColor=d8b4fe" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<br/>
 
-## React Compiler
+<!-- Badges -->
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![DaisyUI](https://img.shields.io/badge/DaisyUI-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![AI Powered](https://img.shields.io/badge/AI--Powered-7C3AED?style=for-the-badge&logo=openai&logoColor=white)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<br/>
+<br/>
 
-## Expanding the ESLint configuration
+> **DigiTools** is a modern digital marketplace to discover, purchase, and instantly access **200+ premium digital tools** — all in one place. Built for creators, developers, and teams who move fast.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<br/>
+
+---
+
+## ✨ Features
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="33%">
+
+### 🛒 AI-Powered Product Catalog
+Smart JSON data generation via AI for dynamic product listings — tools are auto-categorized, priced, and tagged in real-time without manual data entry.
+
+</td>
+<td align="center" width="33%">
+
+### ⚡ Instant 3-Step Checkout
+Get started in three simple steps: **Create Account → Choose Product → Start Using.** Streamlined UX with toast notifications (react-toastify) for every action.
+
+</td>
+<td align="center" width="33%">
+
+### 💎 Transparent Pricing Tiers
+Clean, comparison-ready pricing cards with **Starter**, **Pro**, and **Enterprise** tiers — designed with DaisyUI components and animated with TailwindCSS utilities.
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| ⚛️ **React** | Component-based UI & state management |
+| 🎨 **Tailwind CSS** | Utility-first responsive styling |
+| 🌼 **DaisyUI** | Pre-built accessible UI components |
+| 💅 **CSS** | Custom animations & visual polish |
+| 🔔 **React-Toastify** | User feedback & notification toasts |
+| 🤖 **AI (JSON Gen)** | Auto-generated product & pricing data |
+
+<br/>
+
+---
+
+## 📊 At a Glance
+
+```
+  50K+          200+          4.9 ★
+ Happy Users   Unique Tools   Rating
+```
+
+<br/>
+
+---
+
+## 🚀 Getting Started
+
+```bash
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+```
+
+<br/>
+
+---
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=7C3AED&height=100&section=footer&animation=fadeIn" />
+
+<sub>Built with 💜 using React + TailwindCSS + DaisyUI</sub>
+
+</div>
