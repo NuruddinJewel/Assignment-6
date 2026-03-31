@@ -1,4 +1,4 @@
-# ⚡ Digitools – Supercharge Your Digital Workflow
+# ⚡ DigiTools – Supercharge Your Digital Workflow
 
 <div align="center">
 
